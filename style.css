@@ -1,0 +1,147 @@
+
+*{
+  text-decoration: none;
+}
+  :root {
+    --preto: rgba(215, 251, 253, 0.527);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+    --switch-bg-url: url(./assets/sun.svg);
+    --texto: black;
+
+  }
+  .dark {
+    --preto: rgba(138, 138, 138, 0.377);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+    --texto: white;
+  }
+
+  /*fundo*/
+  body {
+    background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
+  }
+  .cabecalho{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    gap:1rem;
+  }
+  .links{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    gap:1.3rem;
+  }
+  
+  .links a{
+    padding:1rem;
+    background: white;
+    border-radius:5px;
+    width:15rem;
+    text-align:center;
+    font-size:1rem;
+    border: 1px solid var(--texto);
+  }
+
+  a:hover{
+    background: black;
+    color: blue;
+  }
+  
+  h1{
+    color: var(--texto);
+    font-size: 2rem;
+  }
+  span{
+    color: var(--texto);
+
+
+  }
+
+  #imagem{
+    width: 8rem;
+    height:10rem;
+    border-radius: 50%;
+
+  }
+  /* botao tema claro e escuro */
+  #switch {
+    position: relative;
+    width: 64px;
+    margin-top: 20px;
+    margin-right: 40px;
+  }
+
+  #switch button {
+    width: 30px;
+    height: 32px;
+    background: rgb(255, 253, 253) var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border:1px solid rgba(0, 0, 0, 0.555);
+
+  }
+
+  .dark #switch button {
+    animation: slide-in 0.2s forwards;
+  }
+
+  #switch span {
+    display: block;
+    width: 64px;
+    height: 28px;
+    background: var(--preto);
+    border: 1px solid rgba(17, 17, 17, 0.753);
+    backdrop-filter: blur(4px);
+    border-radius: 100px;
+  }
+
+  /*fim botao*/
+ 
+   /* animation */
+
+   @keyframes slide-in {
+    from {
+      left: 0;
+    }
+    to {
+      left: 50%;
+    }
+  }
+  
+  @keyframes slide-back {
+    from {
+      left: 50%;
+    }
+    to {
+      left: 0;
+    }
+  }
+  
+  /* media queries */
+  
+  @media (min-width: 100px) {
+    :root {
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+
+    }
+  
+    .dark {
+        --bg-url: url(./assets/bg-desktop.jpg);
+
+    }
+  }
+  
+ 
